@@ -2,6 +2,8 @@ package br.com.alura.carteira.servlet;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -13,11 +15,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.carteira.dao.TransacaoDao;
+import br.com.alura.carteira.factory.ConnectionFactory;
 import br.com.alura.carteira.modelo.TipoTransacao;
 import br.com.alura.carteira.modelo.Transacao;
 
 @WebServlet("/transacoes")
 public class TransacoesServlet extends HttpServlet {
+	
+	private TransacaoDao dao;
+	
+//	public TransacoesServlet(TransacaoDao dao) {
+	public TransacoesServlet() {
+		this.dao = new TransacaoDao(new ConnectionFactory().getConnection());
+		
+//		try{
+//			String url = "jdbc:mysql://localhost:3306/carteira";
+//			//String url = "jdbc:mysql://localhost:3306/carteira?useSSL=false&serverTimeZone=UTC";
+//			// String url ="jdbc:mysql://localhost:3306/carteira?useTimezone=true&serverTimeZone=UTC";
+//			String usuario = "root";
+//			String senha = "root";	
+//			
+////			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Class.forName("com.mysql.jdbc.Driver");
+//			
+//			Connection conexao = DriverManager.getConnection(url, usuario, senha);
+//			this.dao = new TransacaoDao(conexao);
+//		} catch  (Exception e) {
+//			System.out.println("Ocorreu um erro!");
+//			e.printStackTrace();
+//		}
+	}
 
 	private List<Transacao> transacoes = new ArrayList<>();
 
@@ -31,7 +59,7 @@ public class TransacoesServlet extends HttpServlet {
 		//transacoes.add(t2);
 		//transacoes.add(t3);
 
-		req.setAttribute("transacoes", transacoes);
+		req.setAttribute("transacoes", dao.listar());
 
 		req.getRequestDispatcher("WEB-INF/jsp/transacoes.jsp").forward(req, res);
 
@@ -52,7 +80,7 @@ public class TransacoesServlet extends HttpServlet {
 			
 			Transacao transacao = new Transacao(ticker, data, preco, quantidade, tipo);	
 			
-			transacoes.add(transacao);
+			dao.cadastrar(transacao);
 			
 			resp.sendRedirect("transacoes");
 						

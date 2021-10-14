@@ -2,7 +2,7 @@ package br.com.alura.carteira.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
+//import java.util.Date;
 
 public class Transacao {
 	private String ticker;
