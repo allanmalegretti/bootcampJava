@@ -9,9 +9,9 @@ Aulas:
 
 3- Criando controllers e testando via Postman :chart:
 
-4- Utilizando DTOs e ModelMapper  :construction:
+4- Utilizando DTOs e ModelMapper :chart:
 
-5- Utilizando o Lombok
+5- Utilizando o Lombok :construction:
 
 6- Validações na API
 

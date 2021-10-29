@@ -10,11 +10,12 @@ public class Transacao {
 	private BigDecimal preco;
 	private int quantidade;
 	private TipoTransacao tipo;
+//	private Usuario usuario;
 
 //	@Override
 //	public String toString() {
 //		return super.toString();
-//		return "Java é chique";
+//		return "Java ï¿½ chique";
 //	}
 
 	public Transacao() {
