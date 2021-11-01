@@ -3,8 +3,11 @@ package br.com.alura.carteira.dto;
 import java.math.BigDecimal;
 
 import br.com.alura.carteira.modelo.TipoTransacao;
-import br.com.alura.carteira.modelo.Transacao;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class TransacaoDto {
 	
 	private String ticker;
@@ -18,37 +21,37 @@ public class TransacaoDto {
 //		this.quantidade = transacao.getQuantidade();
 //		this.tipo = transacao.getTipo();	
 //	}
-
-	public String getTicker() {
-		return ticker;
-	}
-
-	public void setTicker(String ticker) {
-		this.ticker = ticker;
-	}
-
-	public BigDecimal getPreco() {
-		return preco;
-	}
-
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public TipoTransacao getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(TipoTransacao tipo) {
-		this.tipo = tipo;
-	}
+//
+//	public String getTicker() {
+//		return ticker;
+//	}
+//
+//	public void setTicker(String ticker) {
+//		this.ticker = ticker;
+//	}
+//
+//	public BigDecimal getPreco() {
+//		return preco;
+//	}
+//
+//	public void setPreco(BigDecimal preco) {
+//		this.preco = preco;
+//	}
+//
+//	public int getQuantidade() {
+//		return quantidade;
+//	}
+//
+//	public void setQuantidade(int quantidade) {
+//		this.quantidade = quantidade;
+//	}
+//
+//	public TipoTransacao getTipo() {
+//		return tipo;
+//	}
+//
+//	public void setTipo(TipoTransacao tipo) {
+//		this.tipo = tipo;
+//	}
 
 }

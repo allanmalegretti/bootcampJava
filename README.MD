@@ -11,8 +11,8 @@ Aulas:
 
 4- Utilizando DTOs e ModelMapper :chart:
 
-5- Utilizando o Lombok :construction:
+5- Utilizando o Lombok :chart:
 
-6- Validações na API
+6- Validações na API :construction:
 
 7- Desenvolvendo uma nova funcionalidade na API
