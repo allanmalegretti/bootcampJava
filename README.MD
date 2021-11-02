@@ -13,6 +13,6 @@ Aulas:
 
 5- Utilizando o Lombok :chart:
 
-6- Validações na API :construction:
+6- Validações na API :chart:
 
-7- Desenvolvendo uma nova funcionalidade na API
+7- Desenvolvendo uma nova funcionalidade na API :construction:
