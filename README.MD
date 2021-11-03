@@ -15,4 +15,4 @@ Aulas:
 
 6- Validações na API :chart:
 
-7- Desenvolvendo uma nova funcionalidade na API :construction:
+7- Desenvolvendo uma nova funcionalidade na API :chart:
