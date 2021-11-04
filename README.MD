@@ -3,16 +3,16 @@ Repositorio para os códigos desenvolvidos no Bootcamp Java 2021 da Alura Módul
 
 Aulas:
 
-1- Motivação de APIs REST :chart:
+1- Controle de versão com Git e GitHub :chart:
 
-2- Criando projeto com Spring Boot e Maven :chart:
+2- Spring Data JPA :chart:
 
-3- Criando controllers e testando via Postman :chart:
+3- JPA e mapeamento de entidades :construction:
 
-4- Utilizando DTOs e ModelMapper :chart:
+4- Camada de persistência com o padrão Repository :construction:
 
-5- Utilizando o Lombok :chart:
+5- Paginação e ordenação de consultas :construction:
 
-6- Validações na API :chart:
+6- Migrations com Flyway :construction:
 
-7- Desenvolvendo uma nova funcionalidade na API :chart:
+7- Desenvolvendo uma nova funcionalidade na API :construction:
