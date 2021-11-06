@@ -7,9 +7,9 @@ Aulas:
 
 2- Spring Data JPA :chart:
 
-3- JPA e mapeamento de entidades :construction:
+3- JPA e mapeamento de entidades :chart:
 
-4- Camada de persistência com o padrão Repository :construction:
+4- Camada de persistência com o padrão Repository :chart:
 
 5- Paginação e ordenação de consultas :construction:
 

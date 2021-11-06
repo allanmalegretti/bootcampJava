@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,18 +22,23 @@ import br.com.alura.carteira.dto.TransacaoDto;
 import br.com.alura.carteira.dto.TransacaoFormDto;
 //import br.com.alura.carteira.modelo.TipoTransacao;
 import br.com.alura.carteira.modelo.Transacao;
+import br.com.alura.carteira.service.TransacaoService;
 
 //@Controller
 @RestController
 @RequestMapping ("/transacoes")
 public class TransacaoController {
 	
-	private List<Transacao> transacoes = new ArrayList<>();
-	private ModelMapper modelMapper = new ModelMapper();
+	@Autowired
+	private TransacaoService service;
+	
+//	private List<Transacao> transacoes = new ArrayList<>();
+//	private ModelMapper modelMapper = new ModelMapper();
 	
 	@GetMapping
 //	@ResponseBody
 	public List<TransacaoDto> listar() {
+		return service.Listar();
 //		return new Transacao("DEVA11", LocalDate.now(), new BigDecimal("100.90"), 20, TipoTransacao.COMPRA);
 
 //		List <TransacaoDto> transacoesDto = new ArrayList<>();
@@ -50,13 +56,17 @@ public class TransacaoController {
 //		return transacoesDto;
 		
 //		ModelMapper modelMapper = new ModelMapper();
-		return transacoes.stream().map(t -> modelMapper.map(t, TransacaoDto.class)).collect(Collectors.toList());
+
+//		return transacoes.stream().map(t -> modelMapper.map(t, TransacaoDto.class)).collect(Collectors.toList());
 	}
 	
 	@PostMapping
 	public void cadastrar(@RequestBody @Valid TransacaoFormDto dto) {
+		service.cadastrar(dto);
+		
 //		ModelMapper modelMapper = new ModelMapper();
-		Transacao transacao = modelMapper.map(dto, Transacao.class);
+		
+//		Transacao transacao = modelMapper.map(dto, Transacao.class);
 		
 //		Transacao transacao = new Transacao(
 //				dto.getTicker(),
@@ -65,6 +75,6 @@ public class TransacaoController {
 //				dto.getQuantidade(),
 //				dto.getTipo());
 		
-		transacoes.add(transacao);
+//		transacoes.add(transacao);
 	}
 }
