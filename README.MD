@@ -11,7 +11,7 @@ Aulas:
 
 4- Camada de persistência com o padrão Repository :chart:
 
-5- Paginação e ordenação de consultas :construction:
+5- Paginação e ordenação de consultas :chart:
 
 6- Migrations com Flyway :construction:
 

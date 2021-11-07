@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import br.com.alura.carteira.modelo.TipoTransacao;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,45 +36,8 @@ public class TransacaoFormDto {
 	
 	@NotNull
 	private TipoTransacao tipo;
-
-//	public String getTicker() {
-//		return ticker;
-//	}
-//
-//	public void setTicker(String ticker) {
-//		this.ticker = ticker;
-//	}
-//
-//	public BigDecimal getPreco() {
-//		return preco;
-//	}
-//
-//	public void setPreco(BigDecimal preco) {
-//		this.preco = preco;
-//	}
-//	
-//	public LocalDate getData() {
-//		return data;
-//	}
-//	
-//	public void setData(LocalDate data) {
-//		this.data = data;
-//	}
-//
-//	public int getQuantidade() {
-//		return quantidade;
-//	}
-//
-//	public void setQuantidade(int quantidade) {
-//		this.quantidade = quantidade;
-//	}
-//
-//	public TipoTransacao getTipo() {
-//		return tipo;
-//	}
-//
-//	public void setTipo(TipoTransacao tipo) {
-//		this.tipo = tipo;
-//	}
-
+	
+	@NotNull
+	@JsonAlias("usuario_id")
+	private Long usuarioId;
 }
