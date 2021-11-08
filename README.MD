@@ -13,6 +13,6 @@ Aulas:
 
 5- Paginação e ordenação de consultas :chart:
 
-6- Migrations com Flyway :construction:
+6- Migrations com Flyway :chart:
 
 7- Desenvolvendo uma nova funcionalidade na API :construction:
