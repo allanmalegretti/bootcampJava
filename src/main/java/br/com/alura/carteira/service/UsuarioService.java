@@ -2,6 +2,7 @@ package br.com.alura.carteira.service;
 
 import java.util.Random;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
@@ -27,7 +28,8 @@ public class UsuarioService {
 		return usuarios.map(t -> modelMapper.map(t, UsuarioDto.class));
 	}
 
-	public void cadastrar(@Valid UsuarioFormDto dto) {
+	@Transactional
+	public UsuarioDto cadastrar(@Valid UsuarioFormDto dto) {
 		Usuario usuario = modelMapper.map(dto, Usuario.class);
 		
 		String senha = new Random().nextInt(999999) + "";
@@ -35,5 +37,7 @@ public class UsuarioService {
 		
 //		System.out.println(usuario.getSenha());		
 		usuarioRepository.save(usuario);
+		
+		return modelMapper.map(usuario, UsuarioDto.class);
 	}
 }
