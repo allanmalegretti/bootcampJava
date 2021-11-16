@@ -27,6 +27,8 @@ public class TransacaoService {
 	
 	@Transactional
 	public TransacaoDto cadastrar(TransacaoFormDto dto) {
+//		throw new NullPointerException("teste");
+		
 		Transacao transacao = modelMapper.map(dto, Transacao.class);
 		transacao.setId(null);
 		

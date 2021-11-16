@@ -1,18 +1,20 @@
 # Bootcamp Java
-Repositorio para os códigos desenvolvidos no Bootcamp Java 2021 da Alura Módulo 02
+Repositorio para os códigos desenvolvidos no Bootcamp Java 2021 da Alura Módulo 04
 
 Aulas:
 
-1- Controle de versão com Git e GitHub :chart:
+1- Tratamento de erros na API :chart:
 
-2- Spring Data JPA :chart:
+2- Testes automatizados com JUnit :construction:
 
-3- JPA e mapeamento de entidades :chart:
+3- Testes utilizando Mocks :construction:
 
-4- Camada de persistência com o padrão Repository :chart:
+4- Testes automatizados das interfaces repository :construction:
 
-5- Paginação e ordenação de consultas :chart:
+5- Correção de bug e melhorias nos testes :construction:
 
-6- Migrations com Flyway :chart:
+6- Testes automatizados das classes controller :construction:
 
-7- Desenvolvendo uma nova funcionalidade na API :chart:
+7- Documentação da API com Swagger :construction:
+
+8- Desenvolvendo uma nova funcionalidade na API :construction:
