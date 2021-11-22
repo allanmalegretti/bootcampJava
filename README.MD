@@ -5,9 +5,9 @@ Aulas:
 
 1- Tratamento de erros na API :chart:
 
-2- Testes automatizados com JUnit :construction:
+2- Testes automatizados com JUnit :chart:
 
-3- Testes utilizando Mocks :construction:
+3- Testes utilizando Mocks :chart:
 
 4- Testes automatizados das interfaces repository :construction:
 
