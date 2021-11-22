@@ -9,7 +9,7 @@ Aulas:
 
 3- Testes utilizando Mocks :chart:
 
-4- Testes automatizados das interfaces repository :construction:
+4- Testes automatizados das interfaces repository :chart:
 
 5- Correção de bug e melhorias nos testes :construction:
 

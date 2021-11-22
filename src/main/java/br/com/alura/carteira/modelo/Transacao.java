@@ -40,7 +40,19 @@ public class Transacao {
 	@Enumerated (EnumType.STRING)
 	private TipoTransacao tipo;
 
+	public Transacao(String ticker, LocalDate data, BigDecimal preco, Integer quantidade, TipoTransacao tipo,
+			Usuario usuario) {	
+		this.ticker = ticker;
+		this.data = data;
+		this.preco = preco;
+		this.quantidade = quantidade;
+		this.tipo = tipo;
+		this.usuario = usuario;
+	}
+
 	@ManyToOne
 //	@JoinColumn (name = "id_usuario")
 	private Usuario usuario;
+	
+	
 }
