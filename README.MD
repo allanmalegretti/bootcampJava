@@ -11,7 +11,7 @@ Aulas:
 
 4- Testes automatizados das interfaces repository :chart:
 
-5- Correção de bug e melhorias nos testes :construction:
+5- Correção de bug e melhorias nos testes :chart:
 
 6- Testes automatizados das classes controller :construction:
 

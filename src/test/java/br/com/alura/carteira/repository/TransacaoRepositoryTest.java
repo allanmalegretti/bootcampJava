@@ -83,15 +83,68 @@ class TransacaoRepositoryTest {
 		.hasSize(4)
 		.extracting(ItemCarteiraDto::getTicker, ItemCarteiraDto::getQuantidade, ItemCarteiraDto::getPercentual)
 		.containsExactlyInAnyOrder(
-				Assertions.tuple("ITSA4", 90l, 0.28571),
-				Assertions.tuple("BBSE3", 80l, 0.25397),
-				Assertions.tuple("EGIE3", 25l, 0.07937),
-				Assertions.tuple("SAPR4", 120l, 0.38095)
+				Assertions.tuple("ITSA4", 90l, new BigDecimal ("28.57")),
+				Assertions.tuple("BBSE3", 80l, new BigDecimal ("25.40")),
+				Assertions.tuple("EGIE3", 25l, new BigDecimal ("7.94")),
+				Assertions.tuple("SAPR4", 120l, new BigDecimal ("38.10"))
 				);
-		
-//		assertEquals(4, relatorio.size());
-//		ItemCarteiraDto item1 = relatorio.get(0);
-//		assertEquals("ITSA4", item1.getTicker());	
 	}
 
+	@Test
+	void deveriaRetornarRelatorioDeCarteiraDeInvestimentosConsiderandoVendas() {
+		Usuario usuario = new Usuario("Rafael", "rafa@email.com", "123456");
+		em.persist(usuario);
+		
+		Transacao t1 = new Transacao("ITSA4", 
+				LocalDate.now(), 
+				new BigDecimal("10.00"), 
+				50, 
+				TipoTransacao.COMPRA, 
+				usuario);
+		em.persist(t1);
+		
+		Transacao t2 = new Transacao("BBSE3", 
+				LocalDate.now(), 
+				new BigDecimal("22.80"), 
+				80, 
+				TipoTransacao.COMPRA, 
+				usuario);
+		em.persist(t2);
+		
+		Transacao t3 = new Transacao("EGIE3", 
+				LocalDate.now(), 
+				new BigDecimal("40.00"), 
+				25, 
+				TipoTransacao.COMPRA, 
+				usuario);
+		em.persist(t3);
+		
+		Transacao t4 = new Transacao("ITSA4", 
+				LocalDate.now(), 
+				new BigDecimal("11.20"), 
+				40, 
+				TipoTransacao.VENDA, 
+				usuario);
+		em.persist(t4);
+		
+		Transacao t5 = new Transacao("SAPR4", 
+				LocalDate.now(), 
+				new BigDecimal("04.02"), 
+				120, 
+				TipoTransacao.COMPRA, 
+				usuario);
+		em.persist(t5);	
+		
+		List<ItemCarteiraDto> relatorio = repository.relatorioCarteiraDeInvestimentos();		
+		Assertions
+		.assertThat(relatorio)
+		.hasSize(4)
+		.extracting(ItemCarteiraDto::getTicker, ItemCarteiraDto::getQuantidade, ItemCarteiraDto::getPercentual)
+		.containsExactlyInAnyOrder(
+				Assertions.tuple("ITSA4", 10l, new BigDecimal ("4.26")),
+				Assertions.tuple("BBSE3", 80l, new BigDecimal ("34.04")),
+				Assertions.tuple("EGIE3", 25l, new BigDecimal ("10.64")),
+				Assertions.tuple("SAPR4", 120l, new BigDecimal ("51.06"))
+				);
+	}
 }
