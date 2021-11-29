@@ -13,7 +13,7 @@ Aulas:
 
 5- Correção de bug e melhorias nos testes :chart:
 
-6- Testes automatizados das classes controller :construction:
+6- Testes automatizados das classes controller :chart:
 
 7- Documentação da API com Swagger :construction:
 
