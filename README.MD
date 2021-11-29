@@ -15,6 +15,6 @@ Aulas:
 
 6- Testes automatizados das classes controller :chart:
 
-7- Documentação da API com Swagger :construction:
+7- Documentação da API com Swagger :chart:
 
 8- Desenvolvendo uma nova funcionalidade na API :construction:
