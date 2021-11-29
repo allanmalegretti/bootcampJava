@@ -53,6 +53,16 @@ public class Transacao {
 	@ManyToOne
 //	@JoinColumn (name = "id_usuario")
 	private Usuario usuario;
+
+	public void atualizarInformacoes(String ticker, LocalDate data, BigDecimal preco,
+			int quantidade, TipoTransacao tipo) {
+				this.ticker = ticker;
+				this.data = data;
+				this.preco = preco;
+				this.quantidade = quantidade;
+				this.tipo = tipo;
+		
+	}
 	
 	
 }

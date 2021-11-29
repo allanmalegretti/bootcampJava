@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import br.com.alura.carteira.dto.AtualizacaoTransacaoFormDto;
+import br.com.alura.carteira.dto.TransacaoDetalhadaDto;
 import br.com.alura.carteira.dto.TransacaoDto;
 import br.com.alura.carteira.dto.TransacaoFormDto;
 import br.com.alura.carteira.modelo.Transacao;
@@ -21,7 +23,6 @@ public class TransacaoService {
 
 	@Autowired
 	private TransacaoRepository repository;
-//	private TransacaoRepository transacaoRepository;
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
@@ -29,33 +30,46 @@ public class TransacaoService {
 	private ModelMapper modelMapper = new ModelMapper();
 
 	public Page<TransacaoDto> listar(Pageable paginacao) {
-//		Page<Transacao> transacoes = transacaoRepository.findAll(paginacao);
-//		return transacoes.map(t -> modelMapper.map(t, TransacaoDto.class));
 		return repository
 				.findAll(paginacao)
 				.map(t -> modelMapper.map(t, TransacaoDto.class));
 	}
 	
 	@Transactional
-	public TransacaoDto cadastrar(TransacaoFormDto dto) {
-//		throw new NullPointerException("teste");
-		
+	public TransacaoDto cadastrar(TransacaoFormDto dto) {		
 		Long idUsuario = dto.getUsuarioId();
 		
 		try {
-			Usuario usuario = usuarioRepository.getById(idUsuario);
-			
+			Usuario usuario = usuarioRepository.getById(idUsuario);	
 			Transacao transacao = modelMapper.map(dto, Transacao.class);
 			transacao.setId(null);
 			transacao.setUsuario(usuario);
 			
 			repository.save(transacao);
-//			transacaoRepository.save(transacao);
 			return modelMapper.map(transacao, TransacaoDto.class);
-//			return new TransacaoDto();
 			
 		} catch (EntityNotFoundException e) {
 			throw new IllegalArgumentException("usuario inexistente!");
 		}
+	}
+
+	@Transactional
+	public TransacaoDto atualizar(AtualizacaoTransacaoFormDto dto) {
+		Transacao transacao = repository.getById(dto.getId());
+		
+		transacao.atualizarInformacoes(dto.getTicker(), dto.getData(),dto.getPreco(), dto.getQuantidade(), dto.getTipo());
+		
+		return modelMapper.map(transacao, TransacaoDto.class);
+	}
+
+	@Transactional
+	public void remover(Long id) {
+		repository.deleteById(id);
+	}
+
+	public TransacaoDetalhadaDto detalhar(Long id) {
+		Transacao transacao = repository
+				.findById(id).orElseThrow(() -> new EntityNotFoundException());
+		return modelMapper.map(transacao, TransacaoDetalhadaDto.class);
 	}
 }

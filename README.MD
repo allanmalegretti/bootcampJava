@@ -17,4 +17,4 @@ Aulas:
 
 7- Documentação da API com Swagger :chart:
 
-8- Desenvolvendo uma nova funcionalidade na API :construction:
+8- Desenvolvendo uma nova funcionalidade na API :chart:
