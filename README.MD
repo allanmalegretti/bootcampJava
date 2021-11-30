@@ -1,20 +1,18 @@
 # Bootcamp Java
-Repositorio para os códigos desenvolvidos no Bootcamp Java 2021 da Alura Módulo 04
+Repositorio para os códigos desenvolvidos no Módulo 05 do Bootcamp Java 2021 da Alura
 
 Aulas:
 
-1- Tratamento de erros na API :chart:
+1- Habilitando Spring Security :chart:
 
-2- Testes automatizados com JUnit :chart:
+2- Autenticação Stateless via Token :construction:
 
-3- Testes utilizando Mocks :chart:
+3- Controle de acesso com token :construction:
 
-4- Testes automatizados das interfaces repository :chart:
+4- Controle de acesso baseado em perfil :construction:
 
-5- Correção de bug e melhorias nos testes :chart:
+5- Validações de segurança :construction:
 
-6- Testes automatizados das classes controller :chart:
+6- Ajustes nos testes automatizados :construction:
 
-7- Documentação da API com Swagger :chart:
-
-8- Desenvolvendo uma nova funcionalidade na API :chart:
+7- Nova funcionalidade :construction:
