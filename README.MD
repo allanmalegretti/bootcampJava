@@ -5,7 +5,7 @@ Aulas:
 
 1- Habilitando Spring Security :chart:
 
-2- Autenticação Stateless via Token :construction:
+2- Autenticação Stateless via Token :chart:
 
 3- Controle de acesso com token :construction:
 
