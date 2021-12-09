@@ -7,7 +7,7 @@ Aulas:
 
 2- Autenticação Stateless via Token :chart:
 
-3- Controle de acesso com token :construction:
+3- Controle de acesso com token :chart:
 
 4- Controle de acesso baseado em perfil :construction:
 
