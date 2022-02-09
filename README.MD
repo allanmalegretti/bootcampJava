@@ -9,7 +9,7 @@ Aulas:
 
 3- Controle de acesso com token :chart:
 
-4- Controle de acesso baseado em perfil :construction:
+4- Controle de acesso baseado em perfil :chart:
 
 5- Validações de segurança :construction:
 

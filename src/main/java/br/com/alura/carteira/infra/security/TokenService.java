@@ -36,7 +36,7 @@ public class TokenService {
 		}
 	}
 
-	public Long extrairIdUsuario(String token) {
+	public Long extrairIdDoUsuario(String token) {
 			Claims claims = Jwts
 			.parser()
 			.setSigningKey(secret)
