@@ -11,7 +11,7 @@ Aulas:
 
 4- Controle de acesso baseado em perfil :chart:
 
-5- Validações de segurança :construction:
+5- Validações de segurança :chart:
 
 6- Ajustes nos testes automatizados :construction:
 
