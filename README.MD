@@ -13,6 +13,6 @@ Aulas:
 
 5- Validações de segurança :chart:
 
-6- Ajustes nos testes automatizados :construction:
+6- Ajustes nos testes automatizados :chart:
 
 7- Nova funcionalidade :construction:
