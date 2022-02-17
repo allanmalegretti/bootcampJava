@@ -15,4 +15,4 @@ Aulas:
 
 6- Ajustes nos testes automatizados :chart:
 
-7- Nova funcionalidade :construction:
+7- Nova funcionalidade :chart:

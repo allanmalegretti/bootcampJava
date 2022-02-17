@@ -9,7 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -55,6 +54,8 @@ public class Transacao {
 	@ManyToOne
 //	@JoinColumn (name = "id_usuario")
 	private Usuario usuario;
+	
+	private BigDecimal imposto;
 
 	public void atualizarInformacoes(String ticker, LocalDate data, BigDecimal preco,
 			int quantidade, TipoTransacao tipo) {
